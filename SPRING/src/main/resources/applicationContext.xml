@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+		<bean name="writeArticleService" class="spring.DI.day0831.WriteArticleServiceImpl">
+				<constructor-arg>
+					<ref bean="articleDao" />
+				</constructor-arg>
+		</bean>
+
+		<bean name="articleDao" class="spring.DI.day0831.MySQLArticleDao">
+		</bean>
+		
+		<bean id="baz" class="spring.DI.day0831.Baz"/>
+		<bean id="bar" class="spring.DI.day0831.Bar"/>
+		<bean id="Foo" class="spring.DI.day0831.Foo">
+			<constructor-arg>
+			<ref bean="baz" />
+			</constructor-arg>
+			<constructor-arg>
+			<ref bean="bar" />
+			</constructor-arg>
+		</bean>
+			
+		<bean id="foo1" class="spring.DI.day0831.Foo">
+		<constructor-arg>
+			<value>hello</value>
+		</constructor-arg>
+				<constructor-arg>
+			<value>10</value>
+		</constructor-arg>
+		</bean>
+</beans>
