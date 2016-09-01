@@ -7,7 +7,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
-    		<bean id="logging" class="spring.DI.day0831.LoggingAspect" />
+    		<bean id="logging" class="day0831.spring.DI.LoggingAspect" />
     <!-- execution(* *..Service.*(..))
     : ~~Service(로 끝나는) 인터페이스를 구현한 클래스의 메서드 호출시 -->
     		<aop:config>

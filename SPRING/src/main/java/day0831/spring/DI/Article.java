@@ -1,4 +1,4 @@
-package spring.DI.day0831;
+package day0831.spring.DI;
 
 public class Article {
 

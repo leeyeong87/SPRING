@@ -1,4 +1,4 @@
-package spring.DI.day0831;
+package day0831.spring.DI;
 
 	import org.springframework.beans.factory.BeanFactory;
 	import org.springframework.beans.factory.xml.XmlBeanFactory;

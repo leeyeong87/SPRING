@@ -1,4 +1,4 @@
-package spring.DI.day0831;
+package day0831.spring.DI;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

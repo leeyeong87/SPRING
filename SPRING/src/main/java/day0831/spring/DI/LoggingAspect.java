@@ -1,4 +1,4 @@
-package spring.DI.day0831;
+package day0831.spring.DI;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
