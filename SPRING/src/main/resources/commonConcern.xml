@@ -4,17 +4,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
-    		<bean id="logging" class="day0831.spring.DI.LoggingAspect" />
-    <!-- execution(* *..Service.*(..))
-    : ~~Service(로 끝나는) 인터페이스를 구현한 클래스의 메서드 호출시 -->
+<context:component-scan base-package="day0831.spring.DI"/>
+<context:annotation-config/>
+<aop:aspectj-autoproxy/>
+<aop:config proxy-target-class="true"/>
+
+    		<!-- <bean id="logging" class="day0831.spring.DI.LoggingAspect" />
+    execution(* *..Service.*(..))
+    : ~~Service(로 끝나는) 인터페이스를 구현한 클래스의 메서드 호출시
     		<aop:config>
         		<aop:pointcut id="servicePointcut" expression="execution(* *..*Service.*(..))" />
 
         		<aop:aspect id="loggingAspect" ref="logging">
             		<aop:around pointcut-ref="servicePointcut" method="logging" />
         		</aop:aspect>
-    		</aop:config>
+    		</aop:config> -->
 		</beans>

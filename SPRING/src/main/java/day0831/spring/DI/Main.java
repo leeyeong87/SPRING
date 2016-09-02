@@ -8,9 +8,10 @@ package day0831.spring.DI;
 	public class Main {
 
 	public static void main(String[] args) {
-		Resource resource = new ClassPathResource("applicationContext.xml");
+		Resource resource = new ClassPathResource("annoTest.xml");
 		BeanFactory beanFactory = new XmlBeanFactory(resource);
-		WriteArticleService articleService = (WriteArticleService) beanFactory.getBean("writeArticleService");
+		WriteArticleService articleService = 
+				(WriteArticleService) beanFactory.getBean("writeArticleService");
 		articleService.write(new Article());
 	}
 }
