@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myMem">
+<!-- insert -->
+	<insert id="insert" parameterType="day0905.spring.ORM.User">
+		insert into member values
+				(#{memberid},#{password},#{name},#{email})
+	</insert>
+<!-- update -->
+	<update id="update" parameterType="day0905.spring.ORM.User">
+		update member set memberid=#{memberid},password=#{password},
+		name=#{name},email=#{email}
+	</update>
+<!-- delete -->
+	<delete id="delete" parameterType="day0905.spring.ORM.User">
+		delete from member where memberid=#{memberid}
+	</delete>
+<!-- select -->
+	<select id="selectAll" resultType="day0905.spring.ORM.User">
+		select * from member
+	</select>
+	<select id="selectId" resultType="day0905.spring.ORM.User">
+		select * from member where memberid=#{memberid}
+	</select>
+	<select id="selectCount" resultType="int">
+		select count(*) from member
+	</select>
+	
+</mapper>

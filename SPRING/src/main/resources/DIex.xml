@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<context:annotation-config/>
+
+<bean id="baz" class="day0831.spring.DI.Baz"/>
+<bean id="bar" class="day0831.spring.DI.Bar"/>
+
+<bean id="foo" class="day0831.spring.DI.Foo" autowire="byName" init-method="start" destroy-method="stop">
+ <!-- 	singleton : 같은 객체로 사용하기 때문에 true
+ 		prototype : 매번 사로운 객체를 만들기 때문에 false-->
+<!-- <property name="baz"><ref bean="baz"/></property>
+<property name="bar" ref="bar" /> -->
+<property name="str" value="klii"/>
+<property name="i" value="10"/>
+
+</bean>
+
+<!-- <bean id="foo1" class="spring.DI.day0831.Foo" p:baz-ref="baz" p:bar-ref="bar"
+p:str="kill" p:i="10"/> -->
+<!-- <bean id="foo2" class="spring.DI.day0831.Foo" p:str="kill" p:i="10">
+<property name="baz"><bean class="spring.DI.day0831.Baz"/></property>
+<lookup-method name="getBar" bean="bar"/>
+</bean> -->
+
+
+</beans>
